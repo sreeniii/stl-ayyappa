@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Image, Dimensions, Platform } from 'react-native';
+import { View, Image, Dimensions, Platform, Text } from 'react-native';
 import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
 import Home from './src/drawer/home';
@@ -14,9 +14,10 @@ const CustomDrawerContentComponent = props => (
     >
       <Image
         source={require('./src/images/logo.png')}
-        style={{ width: SCREEN_WIDTH * 0.57 }}
+        style={{ width: SCREEN_WIDTH * 0.10 }}
         resizeMode="contain"
       />
+      <Text>STL Ayyappa</Text>
     </View>
     <DrawerItems {...props} />
   </View>
@@ -63,12 +64,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
