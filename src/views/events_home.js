@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Platform } from 'react-native';
 
-class Bhajans extends React.Component {
+class Events extends React.Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.headingContainer}>
-          <Text style={styles.titleText}>Bhajans Home</Text>
+          <Text style={styles.titleText}>Events Home</Text>
           <Text style={styles.subtitleText}>gestures for the win!</Text>
         </View>
       </View>
@@ -14,8 +14,8 @@ class Bhajans extends React.Component {
   }
 }
 
-Bhajans.navigationOptions = {
-  title: 'Bhajans'
+Events.navigationOptions = {
+  title: 'Events'
 };
 
 const styles = StyleSheet.create({
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Bhajans;
+export default Events;

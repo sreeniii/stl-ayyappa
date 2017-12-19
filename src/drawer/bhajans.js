@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Bhajans from '../views/home';
+import Bhajans from '../views/bhajans_home';
 
 const BhajansDrawerItem = StackNavigator({
   Bhajans: {

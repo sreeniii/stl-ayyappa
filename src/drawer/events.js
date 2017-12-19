@@ -2,7 +2,7 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Events from '../views/home';
+import Events from '../views/events_home';
 
 const EventsDrawerItem = StackNavigator({
   Events: {
