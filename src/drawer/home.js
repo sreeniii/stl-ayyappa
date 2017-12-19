@@ -1,81 +1,46 @@
 import React from 'react';
-import { View, ScrollView, StyleSheet, Platform } from 'react-native';
-import { createIconSetFromFontello } from 'react-native-vector-icons';
+import { StackNavigator } from 'react-navigation';
+import { Icon } from 'react-native-elements';
 
-import {
-  registerCustomIconType,
-  Text,
-  Button,
-  Icon,
-  SocialIcon,
-  Card
-} from 'react-native-elements';
+import Home from '../views/home';
 
-import colors from 'HSColors';
-import socialColors from 'HSSocialColors';
-import fonts from 'HSFonts';
-import fontelloConfig from '../../assets/fontello/config.json';
-
-
-export default class Home extends React.Component {
-    render() {
-      return (
-        <ScrollView>
-            <View style={styles.hero}>
-                <Icon color="white" name="whatshot" size={62} type="material" />
-                <Text style={styles.heading}>Home</Text>
-            </View>
-        </ScrollView>
-      );
-    };
-    navigationOptions = {
-        drawerLabel: 'Home',
-        drawerIcon: ({ tintColor }) => (
-          <Icon
-            name="home"
+const HomeDrawerItem = StackNavigator({
+  Home: {
+    screen: Home,
+    navigationOptions: ({ navigation }) => ({
+        title: 'Tat Tvam Asi',
+        headerLeft: (
+            <Icon
+            name="menu"
             size={30}
-            iconStyle={{
-              width: 50,
-              height: 50,
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-            type="material-community"
-            color={tintColor}
-          />
+            type="entypo"
+            iconStyle={{ paddingLeft: 10 }}
+            onPress={() => navigation.navigate('DrawerOpen')}
+            />
         ),
-      };
+        headerStyle: {
+            backgroundColor: 'red'
+        },
+    }),
+  },
+});
+
+HomeDrawerItem.navigationOptions = {
+  drawerLabel: 'Home',
+  drawerIcon: ({ tintColor }) => (
+    <Icon
+      name="home"
+      size={30}
+      iconStyle={{
+        width: 50,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+      type="material"
+      color={tintColor}
+    />
+  ),
 };
 
-
-
-const styles = StyleSheet.create({
-    heading: {
-      color: 'white',
-      marginTop: 10,
-      fontSize: 22,
-    },
-    hero: {
-      justifyContent: 'center',
-      alignItems: 'center',
-      padding: 40,
-      backgroundColor: colors.primary2,
-    },
-    titleContainer: {},
-    button: {
-      marginTop: 15,
-    },
-    title: {
-      textAlign: 'center',
-      color: colors.grey2,
-      ...Platform.select({
-        ios: {
-          fontFamily: fonts.ios.black,
-        },
-      }),
-    },
-    socialRow: {
-      flexDirection: 'row',
-      justifyContent: 'space-around',
-    },
-  });
+export default HomeDrawerItem;

@@ -2,13 +2,13 @@ import React from 'react';
 import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
-import Bhajans from '../views/home';
+import Events from '../views/home';
 
-const BhajansDrawerItem = StackNavigator({
-  Bhajans: {
-    screen: Bhajans,
+const EventsDrawerItem = StackNavigator({
+  Events: {
+    screen: Events,
     navigationOptions: ({ navigation }) => ({
-    title: 'Bhajans',
+    title: 'Events',
     headerLeft: (
         <Icon
         name="menu"
@@ -24,11 +24,11 @@ const BhajansDrawerItem = StackNavigator({
 
 
 
-BhajansDrawerItem.navigationOptions = {
-  drawerLabel: 'Bhajans',
+EventsDrawerItem.navigationOptions = {
+  drawerLabel: 'Events',
   drawerIcon: ({ tintColor }) => (
     <Icon
-      name="note"
+      name="event"
       size={30}
       iconStyle={{
         width: 50,
@@ -42,4 +42,4 @@ BhajansDrawerItem.navigationOptions = {
   ),
 };
 
-export default BhajansDrawerItem;
+export default EventsDrawerItem;

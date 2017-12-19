@@ -4,6 +4,7 @@ import { DrawerNavigator, DrawerItems } from 'react-navigation';
 
 import Home from './src/drawer/home';
 import Bhajans from './src/drawer/bhajans';
+import Events from './src/drawer/events';
 
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
@@ -12,11 +13,6 @@ const CustomDrawerContentComponent = props => (
     <View
       style={{ marginTop: 40, justifyContent: 'center', alignItems: 'center' }}
     >
-      <Image
-        source={require('./src/images/logo.png')}
-        style={{ width: SCREEN_WIDTH * 0.10 }}
-        resizeMode="contain"
-      />
       <Text>STL Ayyappa</Text>
     </View>
     <DrawerItems {...props} />
@@ -32,6 +28,10 @@ const MainNavigator = DrawerNavigator(
     Bhajans: {
       path: '/bhajans',
       screen: Bhajans,
+    },
+    Events: {
+      path: '/events',
+      screen: Events,
     }
   },
   {
@@ -46,7 +46,7 @@ const MainNavigator = DrawerNavigator(
         marginLeft: 0,
       },
     },
-    drawerWidth: SCREEN_WIDTH * 0.8,
+    drawerWidth: SCREEN_WIDTH * 0.7,
     contentComponent: CustomDrawerContentComponent,
   }
 );
