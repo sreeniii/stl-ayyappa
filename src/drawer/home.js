@@ -9,7 +9,6 @@ const HomeDrawerItem = StackNavigator({
     screen: Home,
     navigationOptions: ({ navigation }) => ({
         title: 'Tat Tvam Asi',
-        headerTintColor: '#FFCF79',
         headerLeft: (
             <Icon
             name="menu"
@@ -19,9 +18,6 @@ const HomeDrawerItem = StackNavigator({
             onPress={() => navigation.navigate('DrawerOpen')}
             />
         ),
-        headerStyle: {
-            backgroundColor: '#990000'
-        },
     }),
   },
 });

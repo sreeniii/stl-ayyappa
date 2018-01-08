@@ -3,6 +3,14 @@ import { StackNavigator } from 'react-navigation';
 import { Icon } from 'react-native-elements';
 
 import Bhajans from '../views/bhajans_home';
+import BhajanDetail from '../views/bhajans_detail';
+
+const BhajanDetailView = ({ navigation }) => (
+  <BhajanDetail
+    banner={`${navigation.state.params.name}s Profile`}
+    navigation={navigation}
+  />
+);
 
 const BhajansDrawerItem = StackNavigator({
   Bhajans: {
@@ -20,6 +28,13 @@ const BhajansDrawerItem = StackNavigator({
       ),
     }),
   },
+  Bhajan_Detail: {
+    screen: BhajanDetailView,
+    path: '/bhajans_detail',
+    navigationOptions: ({navigation}) => ({
+      title: navigation.state.params.name,
+    }),
+  }
 });
 
 
